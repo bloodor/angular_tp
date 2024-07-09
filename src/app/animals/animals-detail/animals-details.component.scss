@@ -1,0 +1,44 @@
+.animal-details {
+  width: 100%;
+  max-width: 800px;
+  margin: 1em auto;
+}
+
+.animal-details__info {
+  margin-bottom: 20px;
+}
+
+.animal-details__info p {
+  margin-bottom: 10px;
+}
+
+.animal-details__actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #ff7f7f;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}

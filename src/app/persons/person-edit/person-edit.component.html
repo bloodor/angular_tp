@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>Edit Person</h2>
+  <form *ngIf="person" (ngSubmit)="savePerson()" #form="ngForm">
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input id="firstName" [(ngModel)]="person.firstName" name="firstName" required minlength="2" #firstName="ngModel" class="form-control">
+      <div *ngIf="firstName.errors?.['required']" class="alert alert-danger">First Name is required.</div>
+      <div *ngIf="firstName.errors?.['minlength']" class="alert alert-danger">First Name must be at least 2 characters long.</div>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input id="lastName" [(ngModel)]="person.lastName" name="lastName" required minlength="2" #lastName="ngModel" class="form-control">
+      <div *ngIf="lastName.errors?.['required']" class="alert alert-danger">Last Name is required.</div>
+      <div *ngIf="lastName.errors?.['minlength']" class="alert alert-danger">Last Name must be at least 2 characters long.</div>
+    </div>
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input id="age" [(ngModel)]="person.age" name="age" required #age="ngModel" class="form-control">
+      <div *ngIf="age.errors?.['required']" class="alert alert-danger">Age is required.</div>
+    </div>
+    <div class="form-group">
+      <button type="submit" [disabled]="!form.form.valid" class="btn btn-primary">Save</button>
+      <button type="button" (click)="cancel()" class="btn btn-secondary">Cancel</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+  <h2>Edit Animal</h2>
+  <form *ngIf="animals" (ngSubmit)="saveAnimal()" #form="ngForm">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input id="name" [(ngModel)]="animals.name" name="name" required minlength="2" #commonName="ngModel" class="form-control">
+      <div *ngIf="commonName.errors?.['required']" class="alert alert-danger">Name is required.</div>
+      <div *ngIf="commonName.errors?.['minlength']" class="alert alert-danger">Name must be at least 2 characters long.</div>
+    </div>
+    <div class="form-group">
+      <label for="color">Color:</label>
+      <input id="color" [(ngModel)]="animals.color" name="color" required minlength="2" #latinName="ngModel" class="form-control">
+      <div *ngIf="latinName.errors?.['required']" class="alert alert-danger">Latin Name is required.</div>
+      <div *ngIf="latinName.errors?.['minlength']" class="alert alert-danger">Latin Name must be at least 2 characters long.</div>
+    </div>
+    <div class="form-group">
+      <label for="sex">Sex:</label>
+      <select id="sex" [(ngModel)]="animals.sex" name="sex" required #sex="ngModel" class="form-control">
+        <option value="" disabled>Select sex</option>
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+      </select>
+      <div *ngIf="sex.errors?.['required']" class="alert alert-danger">Sex is required.</div>
+    </div>
+    <div class="form-group">
+      <label for="species">Species:</label>
+      <select id="species" [(ngModel)]="animals.species" name="species" class="form-control">
+        <option *ngFor="let specie of species" [value]="specie.id">
+          {{ specie.commonName }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <button type="submit" [disabled]="!form.form.valid" class="btn btn-primary">Save</button>
+      <button type="button" (click)="cancel()" class="btn btn-secondary">Cancel</button>
+    </div>
+  </form>
+</div>

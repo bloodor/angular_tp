@@ -1,0 +1,16 @@
+<div *ngIf="animals" class="animal-details">
+  <h2>{{animals.name}}</h2>
+  <div class="animal-details__info">
+    <p><strong>ID:</strong> {{animals.id}}</p>
+    <p><strong>Name:</strong> {{animals.name}}</p>
+    <p><strong>Color:</strong> {{animals.color}}</p>
+    <p><strong>Sex:</strong> {{animals.sex}}</p>
+    <p><strong>Species:</strong> {{animals.species?.commonName}}</p>
+  </div>
+
+  <div class="animal-details__actions">
+    <button routerLink="/species" class="btn btn-secondary">Back to list</button>
+    <button routerLink="/animals/edit/{{animals.id}}" class="btn btn-primary">Edit</button>
+    <button (click)="deleteAnimals(animals.id)" class="btn btn-danger">Delete</button>
+  </div>
+</div>

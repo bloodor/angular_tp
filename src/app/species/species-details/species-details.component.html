@@ -1,0 +1,13 @@
+<div *ngIf="species" class="species-details">
+  <h2>{{species.commonName}}</h2>
+  <div class="species-details__info">
+    <p><strong>ID:</strong> {{species.id}}</p>
+    <p><strong>Common Name:</strong> {{species.commonName}}</p>
+    <p><strong>Latin Name:</strong> {{species.latinName}}</p>
+  </div>
+  <div class="species-details__actions">
+    <button routerLink="/species" class="btn btn-secondary">Back to list</button>
+    <button routerLink="/species/edit/{{species.id}}" class="btn btn-primary">Edit</button>
+    <button (click)="deleteSpecies(species.id)" class="btn btn-danger">Delete</button>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div *ngIf="person" class="person-details">
+  <h2>{{person.firstName}} {{person.lastName}}</h2>
+  <div class="person-details__info">
+    <p><strong>ID:</strong> {{person.id}}</p>
+    <p><strong>First Name:</strong> {{person.firstName}}</p>
+    <p><strong>Last Name:</strong> {{person.lastName}}</p>
+    <p><strong>Age:</strong> {{person.age}}</p>
+  </div>
+
+  <div class="person-details__actions">
+    <button routerLink="/person" class="btn">Back to list</button>
+  </div>
+</div>

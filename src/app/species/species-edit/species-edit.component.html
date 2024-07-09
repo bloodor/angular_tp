@@ -1,0 +1,22 @@
+<form *ngIf="species" (ngSubmit)="saveSpecies()" #form="ngForm" class="species-edit">
+  <div class="species-edit__field">
+    <label>
+      Common Name:
+      <input [(ngModel)]="species.commonName" name="commonName" required minlength="2" #commonName="ngModel">
+      <div *ngIf="commonName.errors?.['required']">Common Name is required.</div>
+      <div *ngIf="commonName.errors?.['minlength']">Common Name must be at least 2 characters long.</div>
+    </label>
+  </div>
+  <div class="species-edit__field">
+    <label>
+      Latin Name:
+      <input [(ngModel)]="species.latinName" name="latinName" required minlength="2" #latinName="ngModel">
+      <div *ngIf="latinName.errors?.['required']">Latin Name is required.</div>
+      <div *ngIf="latinName.errors?.['minlength']">Latin Name must be at least 2 characters long.</div>
+    </label>
+  </div>
+  <div class="species-edit__actions">
+    <button type="submit" [disabled]="!form.form.valid">Save</button>
+    <button type="button" (click)="cancel()">Cancel</button>
+  </div>
+</form>

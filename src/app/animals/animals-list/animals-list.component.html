@@ -1,0 +1,32 @@
+<div class="filter-bar">
+  <input [(ngModel)]="filter" (input)="applyFilter($event.target)" placeholder="Filter animals">
+  <button routerLink="/animals/add">Create new animal</button>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Color</th>
+      <th>Sex</th>
+      <th>Species (Common name, Latin name)</th>
+      <th>Persons</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let animals of animals">
+      <td>{{animals.id}}</td>
+      <td><a [routerLink]="['/animals/details', animals.id]">{{ animals.name }}</a></td>
+      <td>{{animals.color}}</td>
+      <td>{{animals.sex}}</td>
+      <td>{{animals.species?.commonName + ', ' + animals.species?.latinName}}</td>
+      <td>{{animals.persons}}</td>
+      <td>
+          <button routerLink="/animals/edit/{{animals.id}}">Edit</button>
+          <button (click)="deleteAnimal(animals.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,25 @@
+<div class="filter-bar">
+  <input [(ngModel)]="filter" (input)="applyFilter($event.target)" placeholder="Filter species">
+  <button routerLink="/species/create">Create new specie</button>
+</div>
+<table>
+  <thead>
+  <tr>
+    <th>Common Name</th>
+    <th>Latin Name</th>
+    <th>ID</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let species of species">
+    <td><a [routerLink]="['/species/details', species.id]">{{ species.commonName }}</a></td>
+    <td>{{ species.latinName }}</td>
+    <td>{{ species.id }}</td>
+    <td>
+      <button routerLink="/species/edit/{{species.id}}">Edit</button>
+      <button (click)="deleteSpecies(species.id)">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,1 @@
+pour remplacer l'auth il y a la page api-key dans laquelle il faut mettre la clé qui sans le "Bearer "

@@ -1,0 +1,47 @@
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 1em auto 0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  color: #000;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #ff7f7f;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+button:hover {
+  background-color: #cc6464;
+}
+
+button[type="submit"] {
+  margin-right: 10px;
+}
+
+.alert {
+  margin-top: 10px;
+  color: red;
+  border-color: #f5c6cb;
+}

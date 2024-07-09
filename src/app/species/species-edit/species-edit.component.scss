@@ -1,0 +1,51 @@
+.species-edit {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto 0;
+}
+
+.species-edit__field {
+  margin-bottom: 20px;
+}
+
+.species-edit__field label {
+  display: block;
+}
+
+.species-edit__field input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.species-edit__actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.species-edit__actions button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #ff7f7f;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.species-edit__actions button:hover {
+  background-color: #0056b3;
+}
+
+.species-edit__actions button[type="submit"] {
+  margin-right: 10px;
+}
+
+.species-edit__field div {
+  color: red;
+  margin-bottom: 10px;
+}

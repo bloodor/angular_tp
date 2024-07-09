@@ -1,0 +1,40 @@
+.animal-form {
+  width: 100%;
+  max-width: 800px;
+  margin: 1em auto 0;
+}
+
+.animal-form .form-group {
+  margin-bottom: 20px;
+}
+
+.animal-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.animal-form input,
+.animal-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.animal-form button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #ff7f7f;
+  color: white;
+  cursor: pointer;
+}
+
+.animal-form button:hover {
+  background-color: #cc6464;
+}
+
+.animal-form button[type="submit"] {
+  margin-right: 10px;
+  border-radius: 8px;
+}
